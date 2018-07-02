@@ -18,13 +18,14 @@ $curr_page=isset($_GET['page'])? $_GET['page']:1;
 
 $position = (($curr_page - 1) * $display);
 
-
 $total_pages = ceil($total_rows /5);
 
     $start = 1;
 
     $end = $total_pages;
+    return $position;
 
+?>
 
 
 

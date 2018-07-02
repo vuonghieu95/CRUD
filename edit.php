@@ -1,9 +1,8 @@
 <?php
-$con = new PDO('mysql:host=localhost;dbname=mydb', 'root', '');
-$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$id = isset($_GET['id']) ? $_GET['id'] : '';
-$results = "SELECT * FROM `tbl-sv` where id ='$id'";
-$con->query($results);
+
+require_once ('controller/PostController.php');
+$postController = new PostController();
+$data=$postController ->getResults();
 ?>
 <?php
 $nameErr = $emailErr = $phoneErr = "";
@@ -35,13 +34,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     } else {
         try {
-            $d = isset($_POST['id']) ? $_POST['id'] : '';
-            $a = isset($_POST['name']) ? $_POST['name'] : '';
-            $b = isset($_POST['phone']) ? $_POST['phone'] : '';
-            $c = isset($_POST['email']) ? $_POST['email'] : '';
-            $sql = "UPDATE `tbl-sv` SET  name ='" . $a . "',phone='" . $b . "',email='" . $c . "' WHERE id ='$d';";
-            $stmt = $con->prepare($sql);
-            $stmt->execute();
+//            $d = isset($_POST['id']) ? $_POST['id'] : '';
+//            $a = isset($_POST['name']) ? $_POST['name'] : '';
+//            $b = isset($_POST['phone']) ? $_POST['phone'] : '';
+//            $c = isset($_POST['email']) ? $_POST['email'] : '';
+//            $sql = "UPDATE `tbl-sv` SET  name ='" . $a . "',phone='" . $b . "',email='" . $c . "' WHERE id ='$d';";
+//            $stmt = $con->prepare($sql);
+//            $stmt->execute();
+            require_once('controller/PostController.php');
+            $postController = new PostController();
+           $postController->editController();
             header('Location: index.php');
         } catch (PDOException $e) {
             $e->getMessage();
@@ -66,7 +68,11 @@ require_once('view/temp/header.php'); ?>
                     <div class="content-agile2">
                         <form class="edit" method="post" style="text-align: center">
                             <div>
-                                <?php foreach ($con->query($results) as $row): ?>
+                                <?php
+                                require_once('controller/PostController.php');
+                                $postController = new PostController();
+                                ?>
+                                <?php foreach ($data as $row): ?>
                                     <?php
                                     $id = $row['id'];
                                     $name = $row['name'];

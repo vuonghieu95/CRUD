@@ -24,26 +24,27 @@
             <th>Delete</th>
         </tr>
         <?php
-        include('config.php');
-        $search = isset($_GET['name_search']) ? $_GET['name_search'] : '';
-        $sqlSearch = "SELECT * FROM `tbl-sv` WHERE name LIKE '%$search%'|| phone LIKE '%$search%'||email LIKE '%$search%'  ORDER BY 'id' ASC LIMIT $position, $display  ";
-        $data = $con->query($sqlSearch);
-        $sqlCount = "SELECT * FROM `tbl-sv` WHERE name LIKE '%$search%' ";
-        $count = $con->query($sqlCount)->rowCount();
-        echo"List user: ". $count."-user ";
+
+        $postController = new PostController();
+        $data = $postController->search();
+        //        $sqlCount = "SELECT * FROM `tbl-sv` WHERE name LIKE '%$search%' ";
+        //        $count = $con->query($sqlCount)->rowCount();
+        //        $count =(String)$postController->countSearch();
+        //             echo "List user: " . $count . "-user ";
         ?>
         <?php foreach ($data as $row): ?>
+
             <tr>
                 <td class="id"><?php echo $row['id'] ?></td>
                 <td class="name"><?php echo $row['name'] ?></td>
                 <td class="phone"><?php echo $row['phone'] ?></td>
                 <td class="email"><?php echo $row['email'] ?></td>
                 <td>
-                     <a href="edit.php?id=<?php echo $row['id'] ?>">
-                            <button type="button" class="btn-edit btn btn-primary" data-toggle="modal"
-                                    data-target="#createModal" style="padding: 3px"
-                                    data-id="<?php echo $row['id'] ?>"><i class="fa fa-edit"></i></button>
-                        </a>
+                    <a href="edit.php?id=<?php echo $row['id'] ?>">
+                        <button type="button" class="btn-edit btn btn-primary" data-toggle="modal"
+                                data-target="#createModal" style="padding: 3px"
+                                data-id="<?php echo $row['id'] ?>"><i class="fa fa-edit"></i></button>
+                    </a>
                 </td>
 
                 <td>
@@ -71,6 +72,7 @@
 
         <ul>
             <?php
+            include ('model/config.php');
             if (isset($total_pages)) {
                 if ($total_pages > 1) // nếu tổng số trang > 1 in dòng Page..of..
                 {

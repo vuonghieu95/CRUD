@@ -1,20 +1,17 @@
 <?php
 
-$con = new PDO('mysql:host=localhost;dbname=mydb', 'root', '');
-$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$id = isset($_GET['id']) ? $_GET['id'] : '';
-$results = "SELECT * FROM `tbl-sv` where id ='$id'";
-$con->query($results);
+require_once ('controller/PostController.php');
+$postController = new PostController();
+$data=$postController ->getResults();
 ?>
 
 <?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
-        $id = isset($_POST['id']) ? $_POST['id'] : '';
-        $a = isset($_POST['name']) ? $_POST['name'] : '';
-        $b = isset($_POST['phone']) ? $_POST['phone'] : '';
-        $c = isset($_POST['email']) ? $_POST['email'] : '';
-        $sql = "DELETE FROM `tbl-sv` WHERE id = '$id'";
-        $con->exec($sql);
+
+//        $sql = "DELETE FROM `tbl-sv` WHERE id = '$id'";
+//        $con->exec($sql);
+
+
         header('Location: index.php');
     } catch (PDOException $e) {
         $e->getMessage();
@@ -25,7 +22,9 @@ $con->query($results);
 //    require_once('controller/PostController.php');
 //    $postController = new PostController();
 //
-
+    require_once ('controller/PostController.php');
+    $postController = new PostController();
+    $postController ->del();
     header('Location: index.php');
 }
 ?>
@@ -56,7 +55,7 @@ require_once('view/temp/header.php');
 //                                $results = $postController->getResults();
 //
 //                                ?>
-                                <?php foreach ($con->query($results) as $row): ?>
+                                <?php foreach ($data as $row): ?>
                                     <?php
                                     $id = $row['id'];
                                     $name = $row['name'];

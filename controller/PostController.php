@@ -15,40 +15,65 @@ class PostController
         $postView = new PostView();
         $postView->showPost();
     }
-    public function conn()
+    public function getResults()
     {
-        $postModel = new PostModel();
-        $postModel = new PostModel();
-        $postModel->getConnect();
-
-    }
-    public function getResults(){
         $id = isset($_GET['id']) ? $_GET['id'] : '';
-        $a = isset($_POST['name']) ? $_POST['name'] : '';
-        $b = isset($_POST['phone']) ? $_POST['phone'] : '';
-        $c = isset($_POST['email']) ? $_POST['email'] : '';
+
         $postModel = new PostModel();
         $postModel = new PostModel();
         $postModel->getResults($id);
+        return $postModel->getResults($id);
+    }
+
+    public function addController(){
+        $id = isset($_POST['id']) ? $_POST['id'] : '';
+
+        $name = isset($_POST['name']) ? $_POST['name'] : '';
+        $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
+        $email = isset($_POST['email']) ? $_POST['email'] : '';
+        $postModel = new PostModel();
+        $postModel ->add($name,$phone,$email);
+    }
+
+    public function editController(){
+
+        $id = $_POST['id'];
+        $name = $_POST['name'];
+        $phone = $_POST['phone'];
+        $email = $_POST['email'];
+        $postModel = new PostModel();
+        $postModel ->edit($id,$name,$phone,$email);
     }
 
     public function del()
     {
         $id = isset($_POST['id']) ? $_POST['id'] : '';
-        var_dump($id);
+
         $a = isset($_POST['name']) ? $_POST['name'] : '';
         $b = isset($_POST['phone']) ? $_POST['phone'] : '';
         $c = isset($_POST['email']) ? $_POST['email'] : '';
 
         $postModel = new PostModel();
-        $postModel->getResults();
+
         $postModel->del($id, $a, $b, $c);
 
     }
-    public function search(){
+
+    public function search()
+    {
         require_once('model/PostModel.php');
         $postModel = new PostModel();
-$postModel ->search();
+        $postModel->search();
+        return $postModel->search();
     }
+
+    public function countSearch()
+    {
+        require_once('model/PostModel.php');
+        $postModel = new PostModel();
+        $postModel->countSearch();
+        return $postModel;
+    }
+
 
 }

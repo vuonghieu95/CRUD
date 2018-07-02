@@ -28,10 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"]) || empty($_POST["email"]) || empty($_POST["phone"])) {
 
     } else {
-        $con = new PDO('mysql:host=localhost;dbname=mydb', 'root', '');
-        $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO `tbl-sv` (name, phone, email) VALUES ('" . $name . "','" . $phone . "','" . $email . "')";
-        $con->exec($sql);
+
+        require_once ('controller/PostController.php');
+        $postController = new PostController();
+        $postController ->addController();
+
         header('Location: index.php');
     }
 }
