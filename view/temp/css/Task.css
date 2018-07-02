@@ -1,0 +1,374 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+.wrapper {
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+/*header*/
+.header {
+    width: 100%;
+    height: 50px;
+    background: #f5f5f5;
+    border-bottom: 1px solid black;
+}
+
+.header_title {
+    padding-top: 25px;
+    float: left;
+    width: 30%;
+    padding-left: 25px;
+}
+
+.header_search {
+    padding-top: 40px;
+    float: left;
+    width: 70%;
+
+}
+
+.header_hello {
+    float: left;
+    padding-top: 30px;
+    max-width: 20%;
+    padding-left: 25px;
+}
+
+/*main*/
+.main {
+    height: 620px;
+}
+
+.div_trai {
+    float: left;
+    width: 20%;
+    height: 100%;
+    background: #f5f5f5;
+    /*text-align: center;*/
+}
+
+a {
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.menu li {
+    padding: 5% 10%;
+    border-bottom: 1px solid #dedddd;
+
+}
+
+li.abc:hover {
+    background: #dedddd;
+}
+
+.div_phai {
+    float: left;
+    width: 80%;
+    height: 100%;
+
+}
+
+.div_phai__title h3 {
+    padding: 15px;
+
+}
+
+.div_phai__table {
+    max-width: 1000px;
+
+    padding: 0% 10%;
+}
+
+.div_phai__table td {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+
+table#t01 tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+
+th {
+    border: 1px solid white;
+}
+
+.div_phai__table h5 {
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+
+.div_phai__button {
+    padding: 1% 15%;
+}
+
+.header_search {
+    padding: 0;
+    margin-left: 200px;
+    margin-bottom: 10px;
+}
+
+.create {
+
+    margin-top: 19px;
+}
+
+.edit {
+
+    margin-top: 19px;
+}
+
+.khung-xoa {
+
+}
+
+form.form-search {
+    float: right;
+}
+
+input[type="text"] {
+    border-radius: 50px;
+    padding: 4px 25px;
+}
+
+button.search i {
+    color: #007bff;
+}
+
+button.search {
+    border-radius: 20px;
+    padding: 3px 10px;
+}
+
+button.btn.btn-primary.btn-create {
+    text-transform: uppercase;
+}
+
+table#t01 th {
+    background-color: #007bff;
+    color: white;
+}
+
+.div_phai__table {
+    max-width: 100%;
+    padding: 0% 10%;
+}
+
+.div_phai__title h3 {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 31px 0px;
+    font-weight: bold;
+}
+
+input[type="submit"] {
+    border-radius: 27px;
+    padding: 0px 23px 1px 23px;
+    background: #1984ff;
+    border: 1px solid #1984ff;
+    color: white;
+    margin-bottom: 8px;
+    font-size: 23px;
+}
+
+.delete-cancel {
+
+    padding: 0px 23px;
+    border-radius: 20px;
+    border: 1px solid;
+    background: #1984ff;
+    color: white;
+}
+
+.bcccmn {
+    font-size: 27px;
+    font-weight: bold;
+    text-align: center;
+    color: wheat;
+}
+
+a.delete-cancel:hover {
+    text-decoration: none;
+}
+
+/* Creat*/
+
+.content-agile2 {
+    padding: 25px 0 0;
+}
+
+input#firstname, input#email, input#password1, input#password2, input#username, input#address {
+    width: 300px;
+    height: 50px;
+    padding: 0 15px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 200;
+    background-color: transparent;
+    border-bottom: 5px solid #fff;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    font-family: 'Raleway', sans-serif;
+    margin: 0 auto 20px;
+    display: block;
+    outline: none;
+}
+
+input.register {
+    width: 335px;
+    margin: 30px auto;
+    display: block;
+    height: 50px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: normal;
+    color: #fff;
+    background-color: #3970b0;
+    border-color: transparent;
+    font-family: 'Raleway', sans-serif;
+    -webkit-transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+p.wthree {
+    font-size: 16px;
+    font-weight: normal;
+    color: #fff;
+    text-align: center;
+    text-transform: capitalize;
+    padding-bottom: 20px;
+}
+
+ul.social-agileinfo {
+    text-align: center;
+}
+
+ul.social-agileinfo li {
+    display: inline-block;
+    margin: 0;
+}
+
+ul.social-agileinfo li a i.fa {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+}
+
+ul.social-agileinfo li a i:hover {
+    background-color: #3b5998;
+    color: #fff;
+    border-color: #3b5998;
+}
+
+ul.social-agileinfo li a i.fa:hover {
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+h1.w3ls {
+    font-size: 50px;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.content-w3ls {
+    background-color: #202123;
+    width: 70%;
+    margin: 0 auto 50px;
+    padding: 0;
+}
+
+.content-w3ls .content-agile1 {
+    background: url(http://res.cloudinary.com/ddwq26bm7/image/upload/v1530239072/content1.png) no-repeat;
+    background-position: center;
+    height: 555px;
+}
+
+h2.agileits1 {
+    font-size: 40px;
+    font-weight: normal;
+    color: #fff;
+    text-align: Center;
+    padding: 200px 0 15px;
+    text-transform: uppercase;
+    font-family: 'Monoton', cursive;
+    margin: 0px;
+}
+
+.create {
+    margin-left: 0px;
+    margin-top: 19px;
+}
+
+.form-control2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h1.w3ls {
+    font-size: 50px;
+    color: #202123;
+    padding: 40px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+input.register:hover {
+    background: greenyellow;
+}
+
+input[type="submit"] {
+    border-radius: 27px;
+    padding: 0px 51px 0px 40px;
+    background: #1984ff;
+    border: 1px solid #1984ff;
+    color: white;
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: 23px;
+}
+.header_search {
+    margin-right: -500px;
+}
+.edit {
+    margin-top: 19px;
+}
+/*phantrang*/
+input[type="text"] {
+    border-radius: 50px;
+    padding: 4px 41px;
+}
